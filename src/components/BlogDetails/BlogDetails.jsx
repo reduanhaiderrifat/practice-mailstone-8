@@ -3,7 +3,7 @@ import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { MdBookmarkAdd } from "react-icons/md";
 import { saveBlog } from "../../utils/iindex";
 const BlogDetails = () => {
-  const { tabIndex, setTabIndex } = useState(0);
+  const [tabIndex, setTabIndex] = useState(0);
 
   const blog = useLoaderData();
   const {
@@ -37,11 +37,11 @@ const BlogDetails = () => {
             </div>
             <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-800 dark:text-gray-100">
               <Link
+                to={``}
                 onClick={() => setTabIndex(0)}
-                to=""
-                className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
+                className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                   tabIndex === 0 ? "border border-b-0" : "border-b"
-                } rounded-t-lg dark:border-gray-400 dark:text-gray-50`}
+                }  `}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
